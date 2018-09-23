@@ -1,12 +1,12 @@
 sudo: required
 
 language: node_js
-
+node_js:
+  - "node"
 services:
   - docker
 
 before_install:
-- node -v
 - npm install -g mocha
 - docker build -t zakaria/devops .
 - docker run -d -p 3000:3000 zakaria/devops 
